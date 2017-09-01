@@ -1,1 +1,100 @@
 /* CSS declarations go here */
+/* ==================== General styles ==================== */
+/* .ed-container {
+    border: 1px dotted black;
+} */
+
+.black-bgd {
+    background-color: #212121;
+}
+
+.black-light-bgd {
+    background-color: rgba(0,0,0,0.7);
+}
+
+.white-font {
+    color: #FAFAFA;
+}
+
+.top-header-font {
+    font-weight: bold;
+}
+
+.extra-padding-tb {
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+}
+
+.center-text {
+    text-align: center;
+}
+
+/* ==================== Home styles ==================== */
+.top-bar {
+    border-bottom: 1px solid gray;
+}
+
+.header-section {
+    padding-bottom: 2em;
+    padding-top: 2em;
+}
+
+.header-image-section {
+    background-image: url('img/header-home-mobile.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+.home-header-subtitle {
+    display: block;
+    margin-top: -0.5em;
+}
+
+.header-home-text {
+    background-color: rgba(0,0,0,0.7);
+    font-weight: bold;
+    padding: 2em 1em;
+}
+
+/* ==================== Welcome styles ==================== */
+.welcome-section {
+    padding-bottom: 2em;
+    padding-top: 2em;
+}
+
+.welcome-section-text {
+    text-align: justify;
+}
+
+.service-item-container {
+    padding-bottom: 3em;
+    padding-top: 3em;
+}
+
+.service-label {
+    color: #FF3A5F;
+}
+
+/* ==================== Plans styles ==================== */
+.plans-section {
+    background-attachment: fixed;
+    background-image: url('img/plans-image.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.plans-section-black-layer {
+    padding-bottom: 3em;
+    padding-top: 3em;
+}
+
+.ui.card.plan-card {
+    width: 90%; 
+}
+
+
