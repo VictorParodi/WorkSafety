@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Service from './Service';
+import Course from './Course';
+import Client from './Client';
 
 export default class Test extends Component {
     renderServices() {
@@ -55,39 +58,60 @@ export default class Test extends Component {
         return courses;
     }
 
+    renderClients() {
+        let clients = [
+            {
+                name: 'Company 1',
+                image: 'img/company1.png'
+            },
+
+            {
+                name: 'Company 2',
+                image: 'img/company2.png'
+            },
+
+            {
+                name: 'Company 3',
+                image: 'img/company3.png'
+            },
+
+            {
+                name: 'Company 4',
+                image: 'img/company4.png'
+            },
+
+            {
+                name: 'Company 5',
+                image: 'img/company5.png'
+            },
+
+            {
+                name: 'Company 6',
+                image: 'img/company6.png'
+            },
+
+            {
+                name: 'Company 7',
+                image: 'img/company7.png'
+            }
+        ];
+
+        return clients;
+    }
+
     render() {
         return (
             <div>
-                <div className="ed-container full top-bar black-bgd extra-padding-tb">
-                    <div className="ed-item s-50">
-                        <i className="phone icon white-font"></i>
-                        <span className="top-header-font white-font"> 300 444 33 22 </span>  
-                    </div>
-
-                    <div className="ed-item s-50">
-                        <i className="marker icon white-font"></i>
-                        <span className="top-header-font white-font"> Riohacha, Colombia </span>
-                    </div>
-                </div>    
-
-                <div className="ed-container full header-section black-bgd">
-                    <div className="ed-item s-80">
-                        <h2 className="white-font"> MARCOS PARODI </h2> 
-                        <span className="home-header-subtitle white-font"> Entrenador de trabajo en altura </span>
-                    </div>
-                    
-                    <div className="ed-item s-20 white-font"> menú </div>
-                </div>
-
                 <div className="ed-container full header-image-section s-main-center cross-center">
-                    <p className="header-home-text white-font">
-                        LOREM IPSUM DOLOR LOREM IPSUM DOLOR LOREM IPSUM DOLOR
+                    <p className="header-home-text white-font center-text">
+                        Es implemente el texto de relleno de las imprentas y archivos de texto
                     </p>
                 </div>
 
                 <div className="ed-container welcome-section">
                     <div className="ed-item s-100">
                         <h2 className="center-text"> WELCOME </h2>
+
                         <p className="welcome-section-text">
                             Es implemente el texto de relleno de las imprentas
                             y archivos de texto. Lorem Ipsum ha sido el texto de
@@ -107,6 +131,13 @@ export default class Test extends Component {
 
                 <div className="ed-container full plans-section">
                     <div className="ed-container ed-item s-100 plans-section-black-layer black-light-bgd s-main-center">
+                        <h2 className="ed-item s-100 white-font plans-section-title center-text"> CURSOS </h2>
+                        
+                        <p className="ed-item s-100 white-font center-text"> 
+                            Es implemente el texto de relleno de las imprentas
+                            y archivos de texto.
+                        </p>
+                        
                         {
                             this.renderCourses().map((course, index) => {
                                 return <Course key={index} course={course} />
@@ -114,71 +145,22 @@ export default class Test extends Component {
                         }
                     </div>
                 </div>
-            </div>
-        )
-    }
-}
 
-class Course extends Component {
-    render() {
-        return (
-            <div className="ui card ed-item s-100 plan-card">
-                <div className="image">
-                    <img src={this.props.course.image} />
+                <div className="ed-container clients-section s-main-center">
+                    <div className="ed-item s-100">
+                        <h2 className="plans-section-title center-text"> CLIENTES </h2>
+                        <p className="center-text"> 
+                            Es implemente el texto de relleno de las imprentas
+                            y archivos de texto.
+                        </p>
+                    </div>
+
+                    {
+                        this.renderClients().map((client, index) => {
+                            return <Client key={index} client={client} />
+                        })
+                    }
                 </div>
-
-                <div className="content">
-                    <a className="header"> {this.props.course.name} </a>
-
-                    <div className="meta">
-                        <span className="date"> {this.props.course.date} </span>
-                    </div>
-
-                    <div className="description">
-                        {this.props.course.description}
-                    </div>
-                </div>
-
-                <div className="extra content ed-container">
-                    <div className="ed-item s-50">
-                        <a>
-                            <i className="money icon"></i>
-                            {this.props.course.price}
-                        </a>
-                    </div>
-
-                    <div className="ed-item s-50">
-                        <a>
-                            <i className="users icon"></i>
-                            Descuento por grupo
-                        </a>
-                    </div>
-
-                    <div className="ed-item s-50">
-                        <a>
-                            <i className="certificate icon"></i>
-                            Mas detalles
-                        </a>
-                    </div>
-                </div>
-            </div>
-        )
-    }
-}
-
-class Service extends Component {
-    render() {
-        return (
-            <div className="ed-item s-100 service-item-container">
-                <h2 className="ui icon header">
-                    <i className={this.props.service.icon}></i>
-                    <div className="content">
-                        <span className="service-label"> {this.props.service.label} </span> 
-                        <div className="sub header">
-                            {this.props.service.text}
-                        </div>
-                    </div>
-                </h2>
             </div>
         )
     }

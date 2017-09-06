@@ -5,11 +5,12 @@
 } */
 
 .black-bgd {
-    background-color: #212121;
+    /* background-color: #212121; */
+    background-color: #0F1215;
 }
 
 .black-light-bgd {
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(15,18,21,0.3);
 }
 
 .white-font {
@@ -27,6 +28,15 @@
 
 .center-text {
     text-align: center;
+}
+
+/* ==================== Sidebar styles ==================== */
+#sidebar-title.sidebar-title {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 2em;
+    margin-left: 1em;
+    margin-top: 1em;
 }
 
 /* ==================== Home styles ==================== */
@@ -55,7 +65,7 @@
 }
 
 .header-home-text {
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(15,18,21,0.6);
     font-weight: bold;
     padding: 2em 1em;
 }
@@ -93,8 +103,73 @@
     padding-top: 3em;
 }
 
+.plan-card-container {
+    margin-bottom: 1em;
+    margin-top: 3em;
+}
+
 .ui.card.plan-card {
-    width: 90%; 
+    width: 97%; 
+}
+
+.plans-section-title {
+    font-weight: bold;
+}
+
+/* ==================== Clients styles ==================== */
+.clients-section {
+    padding-bottom: 3em;
+    padding-top: 3em;
+}
+
+.client-logo-container {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
+
+.client-image {
+    height: 80%;
+    width: 80%
+}
+
+i.icon.sidebar.menu-mobile-icon {
+    margin-top: 0.6em;
+}
+
+i.icon.sidebar.menu-mobile-icon:before {
+    font-size: 2em;
+}
+
+/* ==================== Footer styles ==================== */
+.footer-section {
+    padding-bottom: 3em;
+    padding-top: 3em;
+}
+
+.footer-label-container {
+    margin-bottom: 3em;
+    margin-top: 3em;
+}
+
+.footer-label {
+    color: #FF3A5F;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.footer-item-container {
+    font-size: 1.4em;
+    margin-bottom: 0.5em;
+}
+
+/* ==================== Login form styles ==================== */
+.login_form_container {
+    border: 1px dotted gray;
+    padding-bottom: 4em;
+    padding-top: 4em;
 }
 
 
