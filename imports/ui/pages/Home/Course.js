@@ -21,22 +21,22 @@ export default class Course extends Component {
                         </div>
                     </div>
 
-                    <div className="extra content ed-container">
-                        <div className="ed-item s-50 m-100">
+                    <div className="extra content ed-container no-padding">
+                        <div className="ed-item s-50 m-100 l-20">
                             <a>
                                 <i className="dollar icon"></i>
                                 {this.props.course.price}
                             </a>
                         </div>
 
-                        <div className="ed-item s-50 m-100">
+                        <div className="ed-item s-50 m-100 l-50 l-main-center">
                             <a>
                                 <i className="users icon"></i>
                                 Descuento por grupo
                             </a>
                         </div>
 
-                        <div className="ed-item s-50 m-100">
+                        <div className="ed-item s-50 m-100 l-30">
                             <a>
                                 <i className="certificate icon"></i>
                                 Mas detalles

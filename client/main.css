@@ -1,12 +1,20 @@
 /* CSS declarations go here */
 /* ==================== General styles ==================== */
-/* .ed-container {
+.black-border {
     border: 1px dotted black;
-} */
+}
+
+.white-border {
+    border: 1px dotted white;
+}
 
 .black-bgd {
     /* background-color: #212121; */
     background-color: #0F1215;
+}
+
+.yellow-bgd {
+    background-color: #FFEB3B;
 }
 
 .black-light-bgd {
@@ -49,19 +57,29 @@
     padding-top: 2em;
 }
 
+@media(min-width: 1024px) {
+    .header-section {
+        padding-bottom: 1em;
+        padding-top: 1em;
+    }
+}
+
 .header-image-section {
     background-image: url('img/header-home-mobile.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 300px;
     padding-left: 0.5em;
     padding-right: 0.5em;
 }
 
+.home-header-title {
+    font-weight: bold;
+}
+
 .home-header-subtitle {
     display: block;
-    margin-top: -0.5em;
+    margin-top: -1em;
 }
 
 .header-home-text {
@@ -70,10 +88,29 @@
     padding: 2em 1em;
 }
 
+.desktop-menu-container {
+    padding-right: 3em;
+}
+
+.ui.text.menu.desktop-menu {
+    margin-top: -1em; 
+}
+
+.item.white-font.menu-options {
+    color: white !important;
+}
+
 /* ==================== Welcome styles ==================== */
 .welcome-section {
     padding-bottom: 2em;
     padding-top: 2em;
+}
+
+@media(min-width: 1024px) {
+    .welcome-section {
+        padding-bottom: 5em;
+        padding-top: 5em;
+    }
 }
 
 .welcome-section-text {
@@ -101,6 +138,17 @@
 .plans-section-black-layer {
     padding-bottom: 3em;
     padding-top: 3em;
+}
+
+@media(min-width: 1024px) {
+    .plans-section-black-layer {
+        padding-bottom: 6em;
+        padding-top: 4em;
+    }
+
+    .plans-text {
+        padding-bottom: 2em;
+    }
 }
 
 .plan-card-container {
@@ -167,9 +215,36 @@ i.icon.sidebar.menu-mobile-icon:before {
 
 /* ==================== Login form styles ==================== */
 .login_form_container {
-    border: 1px dotted gray;
+    /* border: 1px dotted gray; */
     padding-bottom: 4em;
     padding-top: 4em;
+}
+
+/* ==================== About page styles ==================== */
+.about-section-container {
+    padding-bottom: 3em;
+    padding-top: 3em;
+}
+
+@media(min-width: 1024px) {
+    .about-section-container {
+        padding-bottom: 5em;
+        padding-top: 5em;
+    }
+}
+
+.about-image-container {
+    padding-bottom: 2em;
+}
+
+@media(min-width: 1024px) {
+    .about-image-container {
+        padding-bottom: 0;
+    }
+}
+
+.about-title {
+    padding-bottom: 1em;
 }
 
 

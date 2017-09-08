@@ -4,6 +4,11 @@ import Course from './Course';
 import Client from './Client';
 
 export default class Test extends Component {
+    componentDidMount() {
+        let imageSection = document.querySelector('.header-image-section');
+        imageSection.style.height = `${window.innerHeight}px`; 
+    }
+
     renderServices() {
         let services = [
             {
@@ -130,10 +135,10 @@ export default class Test extends Component {
                 </div>
 
                 <div className="ed-container full plans-section">
-                    <div className="ed-container ed-item s-100 plans-section-black-layer black-light-bgd s-main-center">
+                    <div className="ed-container full ed-item s-100 plans-section-black-layer black-light-bgd s-main-center">
                         <h2 className="ed-item s-100 white-font plans-section-title center-text"> CURSOS </h2>
                         
-                        <p className="ed-item s-100 white-font center-text"> 
+                        <p className="ed-item s-100 white-font center-text plans-text"> 
                             Es implemente el texto de relleno de las imprentas
                             y archivos de texto.
                         </p>

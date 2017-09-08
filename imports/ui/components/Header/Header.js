@@ -11,12 +11,30 @@ export default class Header extends Component {
     }
 
     goToHome() {
-        $('.mobile_sidebar').sidebar('toggle');
+        let wideScreen = window.innerWidth;
+        
+        if (wideScreen < 1024) {
+            $('.mobile_sidebar').sidebar('toggle');
+        }
         FlowRouter.go('home');
     }
 
+    goToAbout() {
+        let wideScreen = window.innerWidth;
+        
+        if (wideScreen < 1024) {
+            $('.mobile_sidebar').sidebar('toggle');
+        }
+        FlowRouter.go('about');
+    }
+
     goToLogin() {
-        $('.mobile_sidebar').sidebar('toggle');
+        let wideScreen = window.innerWidth;
+        
+        if (wideScreen < 1024) {
+            $('.mobile_sidebar').sidebar('toggle');
+        }
+
         FlowRouter.go('login');
     }
 
@@ -30,7 +48,7 @@ export default class Header extends Component {
                         Inicio
                     </a>
 
-                    <a className="item">
+                    <a className="item" onClick={this.goToAbout.bind(this)}>
                         Acerca de mi
                     </a>
 
@@ -51,26 +69,54 @@ export default class Header extends Component {
                     </a>
                 </div>
 
-                <div className="ed-container full top-bar black-bgd extra-padding-tb">
-                    <div className="ed-item s-50">
-                        <i className="phone icon white-font"></i>
-                        <span className="top-header-font white-font"> 300 444 33 22 </span>  
+                <div className="ed-container ed-item s-100 full top-bar yellow-bgd extra-padding-tb">
+                    <div className="ed-item s-50 l-20 l-offset-60 l-main-end">
+                        <i className="phone icon"></i>
+                        <span className="top-header-font"> 300 444 33 22 </span>  
                     </div>
 
-                    <div className="ed-item s-50">
-                        <i className="marker icon white-font"></i>
-                        <span className="top-header-font white-font"> Riohacha, Colombia </span>
+                    <div className="ed-item s-50 l-20 l-main-center">
+                        <i className="marker icon"></i>
+                        <span className="top-header-font"> Riohacha, Colombia </span>
                     </div>
                 </div>    
 
-                <div className="ed-container full header-section black-bgd">
-                    <div className="ed-item s-80">
-                        <h2 className="white-font"> MARCOS PARODI </h2> 
-                        <span className="home-header-subtitle white-font"> Entrenador de trabajo en altura </span>
+                <div className="ed-container full header-section yellow-bgd">
+                    <div className="ed-item s-80 l-30">
+                        <h1 className="home-header-title"> MARCOS PARODI </h1> 
+                        <span className="home-header-subtitle "> Entrenador de trabajo en altura </span>
                     </div>
                     
-                    <div className="ed-item s-20 white-font">
-                        <i className="sidebar icon white-font menu-mobile-icon pusher"></i>
+                    <div className="ed-item s-20 to-m">
+                        <i className="sidebar icon menu-mobile-icon pusher"></i>
+                    </div>
+
+                    <div className="ed-item l-70 main-end from-l desktop-menu-container">
+                        <div className="ui text menu desktop-menu">
+                            <a className="item menu-options" onClick={this.goToHome.bind(this)}>
+                                INICIO
+                            </a>
+
+                            <a className="item menu-options" onClick={this.goToAbout.bind(this)}> 
+                                ACERCA DE MI
+                            </a>
+
+                            <a className="item menu-options">
+                                CURSOS
+                            </a>
+
+                            <a className="item menu-options">
+                                CONSULTAR CERTIFICADOS
+                            </a>
+
+                            <a className="item menu-options">
+                                CONTACTO
+                            </a>
+
+                            <a className="item menu-options" onClick={this.goToLogin.bind(this)}>
+                                ADMINISTRADOR
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

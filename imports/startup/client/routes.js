@@ -6,6 +6,7 @@ import { MainLayout } from '../../ui/layouts/MainLayout';
 import Header from '../../ui/components/Header/Header';
 import Footer from '../../ui/components/Footer/Footer';
 import Home from '../../ui/pages/Home/Home';
+import About from '../../ui/pages/About/About';
 import Login from '../../ui/pages/Login/Login';
 
 FlowRouter.route('/', {
@@ -14,6 +15,17 @@ FlowRouter.route('/', {
         mount(MainLayout, {
             topContent: <Header />,
             content: <Home />,
+            bottomContent: <Footer />
+        });
+    }
+});
+
+FlowRouter.route('/about', {
+    name: 'about',
+    action() {
+        mount(MainLayout, {
+            topContent: <Header />,
+            content: <About />,
             bottomContent: <Footer />
         });
     }
