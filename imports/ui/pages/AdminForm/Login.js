@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import { Accounts } from 'meteor/accounts-base'
+import { Meteor } from 'meteor/meteor';
+import { Accounts } from 'meteor/accounts-base';
 
 export default class Login extends Component {
     render() {
         return (
             <div className="ed-container login_form_section">
-                <div className="ed-item s-100 login_form_container">
+                <div className="ed-item s-100 l-60 login_form_container to-center">
                     <form className="ui form login_form">
-                        <h2> Formulario de registro </h2>
+                        <h2> Formulario de ingreso </h2>
 
                         <div className="field">
                             <label> Nombre de usuario </label>
@@ -19,12 +20,7 @@ export default class Login extends Component {
                             <input type="password" name="password" ref="password" placeholder="Defina contraseña" required />
                         </div>
 
-                        <div className="field">
-                            <label> Repetir contraseña </label>
-                            <input type="password" name="password2" ref="password2" placeholder="Repita su contraseña" required />
-                        </div>
-
-                        <button className="ui button" type="submit"> Registrar </button>
+                        <button className="ui button" type="submit"> Login </button>
                     </form>
                 </div>
             </div>

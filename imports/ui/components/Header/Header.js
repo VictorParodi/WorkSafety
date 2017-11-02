@@ -16,6 +16,7 @@ export default class Header extends Component {
         if (wideScreen < 1024) {
             $('.mobile_sidebar').sidebar('toggle');
         }
+
         FlowRouter.go('home');
     }
 
@@ -25,7 +26,18 @@ export default class Header extends Component {
         if (wideScreen < 1024) {
             $('.mobile_sidebar').sidebar('toggle');
         }
+
         FlowRouter.go('about');
+    }
+
+    goToCourses() {
+        let wideScreen = window.innerWidth;
+
+        if (wideScreen < 1024) {
+            $('.mobile_sidebar').sidebar('toggle');
+        }
+
+        FlowRouter.go('courses');
     }
 
     goToLogin() {
@@ -52,7 +64,7 @@ export default class Header extends Component {
                         Acerca de mi
                     </a>
 
-                    <a className="item">
+                    <a className="item" onClick={this.goToCourses}>
                         Cursos
                     </a>
 
@@ -101,7 +113,7 @@ export default class Header extends Component {
                                 ACERCA DE MI
                             </a>
 
-                            <a className="item menu-options">
+                            <a className="item menu-options goCourses" onClick={this.goToCourses}>
                                 CURSOS
                             </a>
 

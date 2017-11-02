@@ -67,37 +67,37 @@ export default class Test extends Component {
         let clients = [
             {
                 name: 'Company 1',
-                image: 'img/company1.png'
+                image: 'img/komatsu.png'
             },
 
             {
                 name: 'Company 2',
-                image: 'img/company2.png'
+                image: 'img/komatsu.png'
             },
 
             {
                 name: 'Company 3',
-                image: 'img/company3.png'
+                image: 'img/komatsu.png'
             },
 
             {
                 name: 'Company 4',
-                image: 'img/company4.png'
+                image: 'img/komatsu.png'
             },
 
             {
                 name: 'Company 5',
-                image: 'img/company5.png'
+                image: 'img/komatsu.png'
             },
 
             {
                 name: 'Company 6',
-                image: 'img/company6.png'
+                image: 'img/komatsu.png'
             },
 
             {
                 name: 'Company 7',
-                image: 'img/company7.png'
+                image: 'img/komatsu.png'
             }
         ];
 
@@ -106,7 +106,7 @@ export default class Test extends Component {
 
     render() {
         return (
-            <div>
+            <div className="global-container">
                 <div className="ed-container full header-image-section s-main-center cross-center">
                     <p className="header-home-text white-font center-text">
                         Es implemente el texto de relleno de las imprentas y archivos de texto
@@ -151,7 +151,7 @@ export default class Test extends Component {
                     </div>
                 </div>
 
-                <div className="ed-container clients-section s-main-center">
+                <div className="ed-container full clients-section s-main-center yellow-bgd">
                     <div className="ed-item s-100">
                         <h2 className="plans-section-title center-text"> CLIENTES </h2>
                         <p className="center-text"> 

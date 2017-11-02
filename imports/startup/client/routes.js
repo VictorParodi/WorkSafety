@@ -7,7 +7,8 @@ import Header from '../../ui/components/Header/Header';
 import Footer from '../../ui/components/Footer/Footer';
 import Home from '../../ui/pages/Home/Home';
 import About from '../../ui/pages/About/About';
-import Login from '../../ui/pages/Login/Login';
+import Courses from '../../ui/pages/Courses/Courses';
+import AdminForm from '../../ui/pages/AdminForm/AdminForm';
 
 FlowRouter.route('/', {
     name: 'home',
@@ -31,12 +32,23 @@ FlowRouter.route('/about', {
     }
 });
 
+FlowRouter.route('/courses', {
+    name: 'courses',
+    action() {
+        mount(MainLayout, {
+            topContent: <Header />,
+            content: <Courses />,
+            bottomContent: <Footer />
+        });
+    }
+});
+
 FlowRouter.route('/login', {
     name: 'login',
     action() {
         mount(MainLayout, {
             topContent: <Header />,
-            content: <Login />,
+            content: <AdminForm />,
             bottomContent: <Footer />
         });
     }
