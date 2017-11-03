@@ -350,3 +350,19 @@ i.icon.sidebar.menu-mobile-icon:before {
     list-style: none;
     padding-left: 1.5em;
 }
+
+/* ==================== Dashboard page styles ==================== */
+.dashboard_section {
+    padding-bottom: 1em;
+    padding-top: 3em;
+}
+
+@media(min-width: 1024px) {
+    .dashboard_section {
+        padding-top: 5em;
+    }
+}
+
+.options_buttons_container {
+    padding-bottom: 1em;
+}

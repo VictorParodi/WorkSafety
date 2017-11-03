@@ -9,6 +9,7 @@ import Home from '../../ui/pages/Home/Home';
 import About from '../../ui/pages/About/About';
 import Courses from '../../ui/pages/Courses/Courses';
 import AdminForm from '../../ui/pages/AdminForm/AdminForm';
+import Dashboard from '../../ui/pages/Dashboard/Dashboard';
 
 FlowRouter.route('/', {
     name: 'home',
@@ -49,6 +50,17 @@ FlowRouter.route('/login', {
         mount(MainLayout, {
             topContent: <Header />,
             content: <AdminForm />,
+            bottomContent: <Footer />
+        });
+    }
+});
+
+FlowRouter.route('/admin', {
+    name: 'admin',
+    action() {
+        mount(MainLayout, {
+            topContent: <Header />,
+            content: <Dashboard />,
             bottomContent: <Footer />
         });
     }
