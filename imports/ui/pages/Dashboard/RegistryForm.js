@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Meteor } from 'meteor/meteor';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
+import { Certifieds } from './../../../api/certifieds/certifieds';
 
 class RegistryForm extends TrackerReact(Component) {
     createRegistry(event) {
@@ -31,7 +32,25 @@ class RegistryForm extends TrackerReact(Component) {
             registryNumber: registryNumber.value
         }
 
-        console.log(newRegistry);
+        Certifieds.insert(newRegistry, (error, res) => {
+            if (error) {
+                console.log(error.reason);
+            } else {
+                console.log(res);
+                $('.registry_modal').modal('hide');
+            }
+        });
+
+        name.value = '';
+        lastname.value = '';
+        id.value = '';
+        datecourse.value = '';
+        expdate.value = '';
+        level.value = '';
+        company.value = '';
+        trainer.value = '';
+        state.value = '';
+        registryNumber.value = '';
     }
 
     closeModal(event) {
