@@ -3,6 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Accounts } from 'meteor/accounts-base';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
+import RegistryForm from './RegistryForm';
 
 class Dashboard extends TrackerReact(Component) {
     componentDidMount() {
@@ -17,6 +18,10 @@ class Dashboard extends TrackerReact(Component) {
         });
     }
 
+    showRegistryModal() {
+        $('.registry_modal').modal('show');
+    }
+
     render() {
         return (
             <div className="ed-container dashboard_section">
@@ -28,7 +33,7 @@ class Dashboard extends TrackerReact(Component) {
                 </div>
 
                 <div className="ed-item s-50 m-20 options_buttons_container">
-                    <button className="ui blue button">
+                    <button className="ui blue button" onClick={this.showRegistryModal}>
                         <i className="plus icon"></i>
                         Nuevo registro
                     </button>
@@ -38,13 +43,17 @@ class Dashboard extends TrackerReact(Component) {
                     <table className="ui striped selectable celled table">
                         <thead>
                             <tr>
-                                <th> Número </th>
-                                <th> ID </th>
-                                <th> Nombre </th>
-                                <th> Apellido </th>
-                                <th> Edad </th>
-                                <th> Identificación </th>
-                                <th> Cargo </th>
+                                <th> No. </th>
+                                <th> NOMBRES </th>
+                                <th> APELLIDOS </th>
+                                <th> IDENTIFICACIÓN </th>
+                                <th> FECHA FORMACIÓN </th>
+                                <th> VENCIMIENTO </th>
+                                <th> NIVEL </th>
+                                <th> EMPRESA </th>
+                                <th> ENTRENADOR </th>
+                                <th> DEPARTAMENTO </th>
+                                <th> REGISTRO </th>
                             </tr>
                         </thead>
 
@@ -57,6 +66,10 @@ class Dashboard extends TrackerReact(Component) {
                                 <td> Dato 5 </td>
                                 <td> Dato 6 </td>
                                 <td> Dato 7 </td>
+                                <td> Dato 8 </td>
+                                <td> Dato 9 </td>
+                                <td> Dato 10 </td>
+                                <td> Dato 11 </td>
                             </tr>
 
                             <tr>
@@ -67,6 +80,10 @@ class Dashboard extends TrackerReact(Component) {
                                 <td> Dato 5 </td>
                                 <td> Dato 6 </td>
                                 <td> Dato 7 </td>
+                                <td> Dato 8 </td>
+                                <td> Dato 9 </td>
+                                <td> Dato 10 </td>
+                                <td> Dato 11 </td>
                             </tr>
 
                             <tr>
@@ -77,6 +94,10 @@ class Dashboard extends TrackerReact(Component) {
                                 <td> Dato 5 </td>
                                 <td> Dato 6 </td>
                                 <td> Dato 7 </td>
+                                <td> Dato 8 </td>
+                                <td> Dato 9 </td>
+                                <td> Dato 10 </td>
+                                <td> Dato 11 </td>
                             </tr>
 
                             <tr>
@@ -87,6 +108,10 @@ class Dashboard extends TrackerReact(Component) {
                                 <td> Dato 5 </td>
                                 <td> Dato 6 </td>
                                 <td> Dato 7 </td>
+                                <td> Dato 8 </td>
+                                <td> Dato 9 </td>
+                                <td> Dato 10 </td>
+                                <td> Dato 11 </td>
                             </tr>
 
                             <tr>
@@ -97,10 +122,16 @@ class Dashboard extends TrackerReact(Component) {
                                 <td> Dato 5 </td>
                                 <td> Dato 6 </td>
                                 <td> Dato 7 </td>
+                                <td> Dato 8 </td>
+                                <td> Dato 9 </td>
+                                <td> Dato 10 </td>
+                                <td> Dato 11 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
+
+                <RegistryForm showModal={this.showRegistryModal} />
             </div>
         );
     }
