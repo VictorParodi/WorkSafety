@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { Meteor } from 'meteor/meteor';
+import { Mongo } from 'meteor/mongo';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Accounts } from 'meteor/accounts-base';
+import { Certifieds } from './../../../api/certifieds/certifieds';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import RegistryForm from './RegistryForm';
+import Certified from './Certified';
 
 class Dashboard extends TrackerReact(Component) {
     componentDidMount() {
@@ -22,7 +25,17 @@ class Dashboard extends TrackerReact(Component) {
         $('.registry_modal').modal('show');
     }
 
+    getCertifieds() {
+        return Certifieds.find().fetch();
+    }
+
     render() {
+        let certifieds = this.getCertifieds();
+
+        if (!certifieds) {
+            return <div> Cargando... </div>
+        }
+
         return (
             <div className="ed-container dashboard_section">
                 <div className="ed-item s-50 m-20 options_buttons_container">
@@ -58,75 +71,11 @@ class Dashboard extends TrackerReact(Component) {
                         </thead>
 
                         <tbody>
-                            <tr>
-                                <td> Dato 1 </td>
-                                <td> Dato 2 </td>
-                                <td> Dato 3 </td>
-                                <td> Dato 4 </td>
-                                <td> Dato 5 </td>
-                                <td> Dato 6 </td>
-                                <td> Dato 7 </td>
-                                <td> Dato 8 </td>
-                                <td> Dato 9 </td>
-                                <td> Dato 10 </td>
-                                <td> Dato 11 </td>
-                            </tr>
-
-                            <tr>
-                                <td> Dato 1 </td>
-                                <td> Dato 2 </td>
-                                <td> Dato 3 </td>
-                                <td> Dato 4 </td>
-                                <td> Dato 5 </td>
-                                <td> Dato 6 </td>
-                                <td> Dato 7 </td>
-                                <td> Dato 8 </td>
-                                <td> Dato 9 </td>
-                                <td> Dato 10 </td>
-                                <td> Dato 11 </td>
-                            </tr>
-
-                            <tr>
-                                <td> Dato 1 </td>
-                                <td> Dato 2 </td>
-                                <td> Dato 3 </td>
-                                <td> Dato 4 </td>
-                                <td> Dato 5 </td>
-                                <td> Dato 6 </td>
-                                <td> Dato 7 </td>
-                                <td> Dato 8 </td>
-                                <td> Dato 9 </td>
-                                <td> Dato 10 </td>
-                                <td> Dato 11 </td>
-                            </tr>
-
-                            <tr>
-                                <td> Dato 1 </td>
-                                <td> Dato 2 </td>
-                                <td> Dato 3 </td>
-                                <td> Dato 4 </td>
-                                <td> Dato 5 </td>
-                                <td> Dato 6 </td>
-                                <td> Dato 7 </td>
-                                <td> Dato 8 </td>
-                                <td> Dato 9 </td>
-                                <td> Dato 10 </td>
-                                <td> Dato 11 </td>
-                            </tr>
-
-                            <tr>
-                                <td> Dato 1 </td>
-                                <td> Dato 2 </td>
-                                <td> Dato 3 </td>
-                                <td> Dato 4 </td>
-                                <td> Dato 5 </td>
-                                <td> Dato 6 </td>
-                                <td> Dato 7 </td>
-                                <td> Dato 8 </td>
-                                <td> Dato 9 </td>
-                                <td> Dato 10 </td>
-                                <td> Dato 11 </td>
-                            </tr>
+                            {
+                                certifieds.map((certified, index) => {
+                                    return <Certified key={certified._id} certified={certified} number={index + 1}/>
+                                })
+                            }
                         </tbody>
                     </table>
                 </div>

@@ -20,16 +20,16 @@ class RegistryForm extends TrackerReact(Component) {
         } = this.refs;
 
         let newRegistry = {
-            name: name.value,
-            lastname: lastname.value,
-            id: id.value,
-            datecourse: datecourse.value,
-            expdate: expdate.value,
-            level: level.value,
-            company: company.value,
-            trainer: trainer.value,
-            state: state.value,
-            registryNumber: registryNumber.value
+            name: name.value.trim(),
+            lastname: lastname.value.trim(),
+            id: id.value.trim(),
+            datecourse: datecourse.value.trim(),
+            expdate: expdate.value.trim(),
+            level: level.value.trim(),
+            company: company.value.trim(),
+            trainer: trainer.value.trim(),
+            state: state.value.trim(),
+            registryNumber: registryNumber.value.trim()
         }
 
         Certifieds.insert(newRegistry, (error, res) => {
