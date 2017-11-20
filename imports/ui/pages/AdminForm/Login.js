@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
+import { FlowRouter } from 'meteor/kadira:flow-router';
 
 export default class Login extends Component {
+    componentWillMount() {
+        if (Meteor.user()) {
+            FlowRouter.go('admin');
+        }
+    }
+
     loginAdministrator(event) {
         event.preventDefault();
 

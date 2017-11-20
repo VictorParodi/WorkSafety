@@ -14,7 +14,6 @@ class RegistryForm extends TrackerReact(Component) {
                 expdate,
                 level,
                 company,
-                trainer,
                 state,
                 registryNumber
         } = this.refs;
@@ -27,7 +26,7 @@ class RegistryForm extends TrackerReact(Component) {
             expdate: expdate.value.trim(),
             level: level.value.trim(),
             company: company.value.trim(),
-            trainer: trainer.value.trim(),
+            trainer: 'Marcos Parodi',
             state: state.value.trim(),
             registryNumber: registryNumber.value.trim()
         }
@@ -48,7 +47,6 @@ class RegistryForm extends TrackerReact(Component) {
         expdate.value = '';
         level.value = '';
         company.value = '';
-        trainer.value = '';
         state.value = '';
         registryNumber.value = '';
     }
@@ -102,7 +100,12 @@ class RegistryForm extends TrackerReact(Component) {
 
                                         <div className="field">
                                             <label> Nivel </label>
-                                            <input type="text" name="level" ref="level" required />
+                                            <select name="level" ref="level" required>
+                                                <option value="Básico Operativo"> Básico Operativo </option>
+                                                <option value="Básico Administrativo"> Básico Administrativo </option>
+                                                <option value="Avanzado"> Avanzado </option>
+                                                <option value="Coodinador"> Coodinador </option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -115,19 +118,10 @@ class RegistryForm extends TrackerReact(Component) {
                                         </div>
 
                                         <div className="field">
-                                            <label> Entrenador </label>
-                                            <input type="text" name="trainer" ref="trainer" required />
-                                        </div>
-
-                                        <div className="field">
                                             <label> Departamento </label>
                                             <input type="text" name="state" ref="state" required />
                                         </div>  
-                                    </div>
-                                </div>
 
-                                <div className="field">
-                                    <div className="three fields">
                                         <div className="field">
                                             <label> Número registro </label>
                                             <input type="text" name="registry-number" ref="registryNumber" required /> 
@@ -141,6 +135,8 @@ class RegistryForm extends TrackerReact(Component) {
                                     </div>
 
                                     <div className="ed-item s-5"></div>
+                                    <br/>
+                                    <br/>
 
                                     <div className="ed-item s-100 m-20">
                                         <button className="ed-item s-100 ui button orange" onClick={this.closeModal}> Cancelar </button>

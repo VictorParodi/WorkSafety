@@ -40,6 +40,16 @@ export default class Header extends Component {
         FlowRouter.go('courses');
     }
 
+    goToCertifieds() {
+        let wideScreen = window.innerWidth;
+        
+        if (wideScreen < 1024) {
+            $('.mobile_sidebar').sidebar('toggle');
+        }
+
+        FlowRouter.go('certifieds');
+    }
+
     goToLogin() {
         let wideScreen = window.innerWidth;
         
@@ -68,7 +78,7 @@ export default class Header extends Component {
                         Cursos
                     </a>
 
-                    <a className="item">
+                    <a className="item" onClick={this.goToCertifieds}>
                         Consultar certificados
                     </a>
 
@@ -117,7 +127,7 @@ export default class Header extends Component {
                                 CURSOS
                             </a>
 
-                            <a className="item menu-options">
+                            <a className="item menu-options" onClick={this.goToCertifieds}>
                                 CONSULTAR CERTIFICADOS
                             </a>
 

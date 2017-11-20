@@ -10,6 +10,7 @@ import About from '../../ui/pages/About/About';
 import Courses from '../../ui/pages/Courses/Courses';
 import AdminForm from '../../ui/pages/AdminForm/AdminForm';
 import Dashboard from '../../ui/pages/Dashboard/Dashboard';
+import ConsultCertified from '../../ui/pages/ConsultCertified/ConsultCertified';
 
 FlowRouter.route('/', {
     name: 'home',
@@ -39,6 +40,17 @@ FlowRouter.route('/courses', {
         mount(MainLayout, {
             topContent: <Header />,
             content: <Courses />,
+            bottomContent: <Footer />
+        });
+    }
+});
+
+FlowRouter.route('/certifieds', {
+    name: 'certifieds',
+    action() {
+        mount(MainLayout, {
+            topContent: <Header />,
+            content: <ConsultCertified />,
             bottomContent: <Footer />
         });
     }

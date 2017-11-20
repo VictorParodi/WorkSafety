@@ -6,6 +6,12 @@ import Signin from './Signin';
 import Login from './Login';
 
 class AdminForm extends TrackerReact(Component) {
+    state = {
+        subscription: {
+            users: Meteor.subscribe('users')
+        }
+    }
+
     renderForm() {
         let form = Meteor.users.find().count()? <Login /> : <Signin />;
         return form;

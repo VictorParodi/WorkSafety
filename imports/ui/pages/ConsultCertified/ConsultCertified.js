@@ -1,34 +1,23 @@
 import React, { Component } from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Mongo } from 'meteor/mongo';
-import { FlowRouter } from 'meteor/kadira:flow-router';
-import { Accounts } from 'meteor/accounts-base';
-import { Certifieds } from './../../../api/certifieds/certifieds';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
-import RegistryForm from './RegistryForm';
-import Certified from './Certified';
+import { Certifieds } from './../../../api/certifieds/certifieds';
+import Certified from './../Dashboard/Certified';
 
-class Dashboard extends TrackerReact(Component) {
+class ConsultCertified extends TrackerReact(Component) {
+    // constructor() {
+    //     super();
+    //     this.state = {
+    //         subscription: {
+    //             certifieds: Meteor.subscribe('certifieds')
+    //         }
+    //     }
+    // }
+
     state = {
         subscription: {
             certifieds: Meteor.subscribe('certifieds')
         }
-    }
-
-    componentDidMount() {
-        if (!Meteor.userId()) {
-            FlowRouter.go('home');
-        }
-    }
-
-    logOut() {
-        Meteor.logout(() => {
-            FlowRouter.go('home');
-        });
-    }
-
-    showRegistryModal() {
-        $('.registry_modal').modal('show');
     }
 
     getCertifieds() {
@@ -38,23 +27,21 @@ class Dashboard extends TrackerReact(Component) {
     render() {
         let certifieds = this.getCertifieds();
 
-        if (!certifieds) {
-            return <div> Cargando... </div>
-        }
+        if (!certifieds) {return <div> Cargando... </div>}
 
         return (
             <div className="ed-container dashboard_section">
                 <div className="ed-item s-50 m-20 options_buttons_container">
-                    <button className="ui green button" onClick={this.logOut}>
+                    <button className="ui green button">
                         <i className="cancel icon"></i>
-                        Cerrar sesión
+                        Filtro 1
                     </button>
                 </div>
 
                 <div className="ed-item s-50 m-20 options_buttons_container">
-                    <button className="ui blue button" onClick={this.showRegistryModal}>
+                    <button className="ui blue button">
                         <i className="plus icon"></i>
-                        Nuevo registro
+                        Filtro 2
                     </button>
                 </div>
 
@@ -85,11 +72,9 @@ class Dashboard extends TrackerReact(Component) {
                         </tbody>
                     </table>
                 </div>
-
-                <RegistryForm showModal={this.showRegistryModal} />
             </div>
         );
     }
 }
 
-export default Dashboard;
+export default ConsultCertified;
