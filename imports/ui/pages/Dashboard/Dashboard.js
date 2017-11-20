@@ -43,7 +43,7 @@ class Dashboard extends TrackerReact(Component) {
         }
 
         return (
-            <div className="ed-container dashboard_section">
+            <div className="ed-container full dashboard_section">
                 <div className="ed-item s-50 m-20 options_buttons_container">
                     <button className="ui green button" onClick={this.logOut}>
                         <i className="cancel icon"></i>
@@ -73,6 +73,7 @@ class Dashboard extends TrackerReact(Component) {
                                 <th> ENTRENADOR </th>
                                 <th> DEPARTAMENTO </th>
                                 <th> REGISTRO </th>
+                                <th> ACCIONES </th>
                             </tr>
                         </thead>
 

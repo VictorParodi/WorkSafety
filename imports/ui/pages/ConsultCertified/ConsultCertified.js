@@ -5,15 +5,6 @@ import { Certifieds } from './../../../api/certifieds/certifieds';
 import Certified from './../Dashboard/Certified';
 
 class ConsultCertified extends TrackerReact(Component) {
-    // constructor() {
-    //     super();
-    //     this.state = {
-    //         subscription: {
-    //             certifieds: Meteor.subscribe('certifieds')
-    //         }
-    //     }
-    // }
-
     state = {
         subscription: {
             certifieds: Meteor.subscribe('certifieds')

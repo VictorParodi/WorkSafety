@@ -367,6 +367,10 @@ i.icon.sidebar.menu-mobile-icon:before {
     padding-bottom: 1em;
 }
 
+.actions_icons:hover {
+    cursor: pointer;
+}
+
 /* ==================== Registry Form page styles ==================== */
 .buttons_actions_form_container {
     padding-bottom: 1em;
